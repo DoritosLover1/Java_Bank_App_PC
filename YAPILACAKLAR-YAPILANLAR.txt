@@ -1,0 +1,42 @@
+1:01 AM 8/27/2025
+
+//GENEL
+1.SERIALIZABLE HAKKINDA OKUMA YAP. BELKİ BU VERİ GETİRME KISMINDA DEĞİŞİMLER OLABLİR
+
+//SIDEMENUFUNC
++2.BAZI TÜR FONKSİYONLARI ORTAK KULLANIM İÇİN YAP/DÜZENLE. YANİ YAPILANDIR. (KALDI İKİ ÜÇ ADET)
+
+//LOGINPANEL
+3.Add "Forgot Password" functionality.
+4.Implement "Sign Up" button functionality.
+++5.Login history table in the database.
+		CREATE TABLE login_history (
+    	id INT AUTO_INCREMENT PRIMARY KEY,
+    	tc_number VARCHAR(11) NOT NULL,
+    	ip_address VARCHAR(45) NOT NULL,
+    	login_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    	login_location VARCHAR(255),
+    	device_info VARCHAR(500),
+    	success BOOLEAN DEFAULT TRUE,
+    	FOREIGN KEY (tc_number) REFERENCES user_credentials(tc_number) ON DELETE CASCADE ON UPDATE CASCADE,
+    	INDEX idx_login_history_tc (tc_number),
+    	INDEX idx_login_history_date (login_date),
+    	INDEX idx_login_history_ip (ip_address)
+    );
+
+10:16 PM 8/29/2025
+++1. EXCHANGE KISMI YAPILDI.
+
+5:19 PM 9/3/2025
+++1. LOGOUT DURUMLARI YAPILDI.
+++2. MENUNUN SAKLANMASI YAPILDI.
+++3. KİŞİSEL VERİLERİN ALINMASI YAPILDI.
+++4. ALINAN KİŞİSEL VERİLERİN ÇIKIŞ DURUMUNDA SİLLİNMÖESİ YAPILDUI.
+
+5:20 PM 9/3/2025 //YAPILMAYANLAR
+--3. Add "Forgot Password" functionality.
+--4. Implement "Sign Up" button functionality.
+
+2:16 AM 9/5/2025
+++1.DASHBOARD KISMI YAPILDI // SADECE ÜST ADI KALDI DEĞİŞSECEK
+++2.LAYERED KAYNAKLI SIKINTI GİDERİLDİ.
